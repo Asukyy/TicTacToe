@@ -37,14 +37,19 @@ for(let i = 0; i < cell.length ; i++){
             player1.push(i);
             flag = false;
         }
+        else if(flag === false && cell[i].innerHTML === 'X' || flag === true && cell[i].innerHTML === 'O'){
+            alert('Case déjà remplie');
+        }
         else{
             cell[i].innerHTML = 'O';
             player2.push(i);
             flag = true;
         }
         checkwinner();
+
     });
 }
+
 
 function checkwinner(){
     winCombos.find((item) => {
@@ -67,6 +72,7 @@ function checkwinner(){
         
     });
 }
+
 
 function clearBoard(){
     player1 = [];
