@@ -2,7 +2,7 @@ const cell = document.querySelectorAll('.cell');
 const scoreplayer1 = document.querySelector('.scorePlayer1');
 const scoreplayer2 = document.querySelector('.scorePlayer2');
 
-const restartBtn = document.querySelector('.restart').addEventListener('click', clearBoard);
+const restartBtn = document.querySelector('.restart').addEventListener('click', restart);
 
 const winCombos = [
     [0, 1, 2],
@@ -50,6 +50,13 @@ for(let i = 0; i < cell.length ; i++){
     });
 }
 
+
+function restart(){
+    clearBoard();
+    score.player1 = 0;
+    score.player2 = 0;
+    drawScore();
+}
 
 function checkwinner(){
     winCombos.find((item) => {
